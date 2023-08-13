@@ -6,8 +6,7 @@ export const client = createClient({
   projectId: 'tdf3mj40',
   dataset: 'production',
   apiVersion: '2021-10-21',
-  useCdn: true,
-  token: process.env.SANITY_PUBLIC_TOKENS,
+  useCdn: false,
 })
 
 const builder = imageUrlBuilder(client)
