@@ -16,8 +16,8 @@ export async function getBanner() {
   }`)
 }
 
-export async function getProduct() {
-  return client.fetch(groq`*[ _type == 'product']{
+export async function getAiHeadphones() {
+  return client.fetch(groq`*[ _type == 'product' && details == "AI Beats on the market"]{
     'image': image[].asset->url,
     name,
     'slug': slug.current, 
