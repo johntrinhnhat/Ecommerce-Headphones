@@ -119,13 +119,14 @@ span.text-red {
 /* -------------------CART----------------- */
 
 .cart-icon {
-  font-size: 25px;
+  font-size: 30px;
   color: gray;
   cursor: pointer;
   position: relative;
   transition: transform .4s ease;
   border: none;
   background-color: transparent;
+  margin-right: 40px;
 }
 
 .cart-icon:hover {
