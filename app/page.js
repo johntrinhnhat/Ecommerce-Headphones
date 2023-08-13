@@ -1,13 +1,24 @@
 import HeroBanner from "@/components/HeroBanner";
 import React from "react";
-import { getBanner } from "@/sanity-headphone/sanity.utils";
+import { getProduct, getBanner } from "@/sanity-headphone/sanity.utils";
+import Product from "@/components/Product";
 
 const Home = async () => {
   const bannerData = await getBanner();
-  console.log(bannerData);
+  const productData = await getProduct();
   return (
     <>
-      <HeroBanner herobanner={bannerData.length && bannerData[0]} />
+      <main className="main-container">
+        <HeroBanner herobanner={bannerData.length && bannerData[0]} />
+        <div className="products-heading">
+          <h2>Best Selling Products</h2>
+        </div>
+        <div className="products-container">
+          {productData?.map((product) => (
+            <Product key={product._id} product={product} />
+          ))}
+        </div>
+      </main>
     </>
   );
 };
