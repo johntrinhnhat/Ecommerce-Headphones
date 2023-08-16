@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="footer-container">
       <p>2023 &copy; Khoi T.</p>
-      <p>Portfolio Purpose Only</p>
+      <p className="text-black">Portfolio Purpose Only</p>
       <p className="icons">
         <Link href="https://www.linkedin.com/in/johntrinhnhat/">
           <AiFillLinkedin />
