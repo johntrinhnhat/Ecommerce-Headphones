@@ -14,7 +14,7 @@ const Home = async () => {
         <div className="products-heading">
           <h2>Best Selling Products</h2>
         </div>
-        <div className="products-container">
+        <div className="products-container track">
           {productData?.map((product) => (
             <Product key={product._id} product={product} />
           ))}
