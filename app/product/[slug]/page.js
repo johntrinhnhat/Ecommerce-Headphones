@@ -30,8 +30,8 @@ const Page = async ({ params: { slug } }) => {
   const productData = await getHeadphones();
   const productSlug = await generateStaticParams(slug);
   const [{ name, image, details, price, _id }] = productSlug;
-  console.log(productSlug);
-  console.log(price);
+  // console.log(productSlug);
+  // console.log(price);
 
   return (
     <div>

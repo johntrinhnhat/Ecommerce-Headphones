@@ -1,12 +1,16 @@
 import HeroBanner from "@/components/HeroBanner";
 import React from "react";
-import { getAiHeadphones, getBanner } from "@/sanity-headphone/sanity.utils";
+import {
+  getAvengerHeadphones,
+  getBanner,
+} from "@/sanity-headphone/sanity.utils";
 import Product from "@/components/Product";
 import FooterBanner from "@/components/FooterBanner";
 
 const Home = async () => {
   const bannerData = await getBanner();
-  const productData = await getAiHeadphones();
+  const productData = await getAvengerHeadphones();
+  console.log(productData);
   return (
     <div>
       <main className="main-container">

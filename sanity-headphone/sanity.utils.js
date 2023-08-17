@@ -16,8 +16,8 @@ export async function getBanner() {
   }`)
 }
 
-export async function getAiHeadphones() {
-  return client.fetch(groq`*[ _type == 'product' && details == "AI Beats on the market"]{
+export async function getAvengerHeadphones() {
+  return client.fetch(groq`*[ _type == 'product' && details == "The best avenger beats on the market"]{
     _id,
     'image': image[].asset->url,
     name,

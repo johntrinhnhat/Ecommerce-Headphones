@@ -2,13 +2,12 @@ import { urlFor } from "@/sanity-headphone/sanity.client";
 import Link from "next/link";
 import React from "react";
 
-const Product = ({ product: { image, name, price, slug, _id } }) => {
+const Product = ({ product: { image, name, price, slug } }) => {
   return (
     <div>
-      <Link href={`/product/${slug.current}`}>
+      <Link href={`/product/${slug}`}>
         <div className="product-card">
           <img
-            key={_id}
             src={urlFor(image && image[0])
               .width(250)
               .height(250)
