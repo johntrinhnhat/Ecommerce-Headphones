@@ -26,18 +26,3 @@ export async function getAiHeadphones() {
     details,
   }`)
 }
-
-export async function getHeadphones() {
-  return client.fetch(groq`*[ _type == 'product']{
-    'image': image[].asset->url,
-    name,
-    'slug': slug.current, 
-    price,
-    details,
-  }`)
-}
-
-export async function getData(slug) {
-  const data = await client.fetch(groq`*[ _type == 'product' && slug.current == '${slug}'][0]`)
-  return data
-}

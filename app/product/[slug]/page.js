@@ -1,22 +1,38 @@
 import { client, urlFor } from "@/sanity-headphone/sanity.client";
-import React from "react";
-import { Product } from "@/components";
-import { getHeadphones, getData } from "@/sanity-headphone/sanity.utils";
-import ProductDetails from "@/components/ProductDetails";
+import { Product } from "@/components/index";
+import { ProductDetails } from "@/components/index";
+
+export async function getHeadphones() {
+  return client.fetch(`*[ _type == 'product']{
+    'image': image[].asset->url,
+    name,
+    'slug': slug.current, 
+    price,
+    details,
+  }`);
+}
+
+export async function generateStaticProps(slug) {
+  const data = await client.fetch(
+    `*[ _type == 'product' && slug.current == '${slug}']`
+  );
+
+  return data.map((item) => ({
+    slug: item.slug.current,
+    name: item.name,
+    image: item.image,
+    details: item.details,
+    price: item.price,
+    _id: item._id,
+  }));
+}
 
 const Page = async ({ params: { slug } }) => {
   const productData = await getHeadphones();
-  const productSlug = await getData(slug);
-  const { name, image, details, price, _id } = productSlug;
+  const productSlug = await generateStaticProps(slug);
+  const [{ name, image, details, price, _id }] = productSlug;
   console.log(productSlug);
-  // async function getData() {
-  //   const data = await client.fetch(
-  //     `*[ _type == 'product' && slug.current == '${slug}'][0]`
-  //   );
-  //   return data;
-  // }
-  // const productSlug = await getData();
-  // const { name, image, details, price, _id } = productSlug;
+  console.log(image);
 
   return (
     <div>

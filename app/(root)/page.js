@@ -8,20 +8,20 @@ const Home = async () => {
   const bannerData = await getBanner();
   const productData = await getAiHeadphones();
   return (
-    <>
+    <div>
       <main className="main-container">
         <HeroBanner herobanner={bannerData.length && bannerData[0]} />
         <div className="products-heading">
           <h2>Best Selling Products</h2>
         </div>
-        <div className="products-container">
+        <div className="products-container track">
           {productData?.map((product) => (
             <Product key={product._id} product={product} />
           ))}
         </div>
         <FooterBanner footerBanner={bannerData.length && bannerData[0]} />
       </main>
-    </>
+    </div>
   );
 };
 
