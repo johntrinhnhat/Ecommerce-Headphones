@@ -35,15 +35,13 @@ const Page = async ({ params: { slug } }) => {
 
   return (
     <div>
-      <div className="product-detail-container">
-        <ProductDetails
-          id={_id}
-          name={name}
-          image={image}
-          details={details}
-          price={price}
-        />
-      </div>
+      <ProductDetails
+        id={_id}
+        name={name}
+        image={image}
+        details={details}
+        price={price}
+      />
 
       <div className="maylike-products-wrapper">
         <h2>You may also like</h2>

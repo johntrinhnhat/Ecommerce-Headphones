@@ -12,7 +12,7 @@ const Home = async () => {
   const productData = await getAvengerHeadphones();
   console.log(productData);
   return (
-    <div>
+    <div className="product-detail-container">
       <main className="main-container">
         <HeroBanner herobanner={bannerData.length && bannerData[0]} />
         <div className="products-heading">
