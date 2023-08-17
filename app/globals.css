@@ -199,7 +199,7 @@ span.text-red {
 .hero-banner-container button {
   border-radius: 15px;
   padding: 10px 16px;
-  background-color: #f02d34;
+  background-color: #135482;
   color: white;
   border: none;
   margin-top: 40px;
@@ -275,7 +275,7 @@ span.text-red {
 
 .footer-banner-container {
   padding: 100px 40px;
-  background-color: #f02d34;
+  background-color: #135482;
   border-radius: 15px;
   position: relative;
   height: 400px;
@@ -294,7 +294,7 @@ span.text-red {
   border-radius: 15px;
   padding: 10px 16px;
   background-color: white;
-  color: red;
+  color: #135482;
   border: none;
   margin-top: 40px;
   font-size: 18px;
