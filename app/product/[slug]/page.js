@@ -1,6 +1,5 @@
 import { client, urlFor } from "@/sanity-headphone/sanity.client";
-import { Product } from "@/components/index";
-import { ProductDetails } from "@/components/index";
+import { Product, ProductDetails } from "@/components/index";
 
 export async function getHeadphones() {
   return client.fetch(`*[ _type == 'product']{
@@ -12,7 +11,7 @@ export async function getHeadphones() {
   }`);
 }
 
-export async function generateStaticProps(slug) {
+export async function generateStaticParams(slug) {
   const data = await client.fetch(
     `*[ _type == 'product' && slug.current == '${slug}']`
   );
@@ -29,10 +28,10 @@ export async function generateStaticProps(slug) {
 
 const Page = async ({ params: { slug } }) => {
   const productData = await getHeadphones();
-  const productSlug = await generateStaticProps(slug);
+  const productSlug = await generateStaticParams(slug);
   const [{ name, image, details, price, _id }] = productSlug;
   console.log(productSlug);
-  console.log(image);
+  console.log(price);
 
   return (
     <div>
