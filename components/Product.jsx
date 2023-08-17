@@ -4,7 +4,7 @@ import React from "react";
 
 const Product = ({ product: { image, name, price, slug, _id } }) => {
   return (
-    <>
+    <div>
       <Link href={`/product/${slug}`}>
         <div className="product-card">
           <img
@@ -19,7 +19,7 @@ const Product = ({ product: { image, name, price, slug, _id } }) => {
         <p className="product-name">{name}</p>
         <p className="product-price">${price}</p>
       </Link>
-    </>
+    </div>
   );
 };
 
